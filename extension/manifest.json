@@ -1,0 +1,22 @@
+{
+	"manifest_version": 3,
+	"name": "R+",
+	"version": "1.0",
+	"description": "R Plus companion extension",
+	"permissions": [
+		"scripting"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"file:///*/index.html"
+			],
+			"js": [
+				"content.js"
+			]
+		}
+	],
+	"action": {
+		"default_popup": "popup.html"
+	}
+}
