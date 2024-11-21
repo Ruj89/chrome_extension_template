@@ -11,7 +11,7 @@ build: $(BUILD_DIR)/$(APP_NAME) $(BUILD_DIR)/$(CHROME_APP_NAME).json
 	@echo "Build completed!"
 
 $(BUILD_DIR)/$(APP_NAME): $(GO_SOURCE_DIR)/main.go
-	@echo "Building the Go binary..."
+	@echo "Building $(APP_NAME)..."
 	@mkdir -p $(BUILD_DIR)
 	go build -o $(BUILD_DIR)/$(APP_NAME) $(GO_SOURCE_DIR)/main.go
 
@@ -19,8 +19,8 @@ ifneq ($(BASE_DIR),)
 DESTINATION_BUILD_DIR = $(abspath $(BASE_DIR)/$(BUILD_DIR))
 MANIFEST_PATH = $(abspath $(BASE_DIR)/$(EXTENSION_SOURCE_DIR))
 else
-DESTINATION_BUILD_DIR = $(realpath $(BUILD_DIR))
-MANIFEST_PATH = $(realpath $(EXTENSION_SOURCE_DIR))
+DESTINATION_BUILD_DIR = $(abspath $(BUILD_DIR))
+MANIFEST_PATH = $(abspath $(EXTENSION_SOURCE_DIR))
 endif
 
 $(BUILD_DIR)/.extension_id: $(EXTENSION_SOURCE_DIR)
