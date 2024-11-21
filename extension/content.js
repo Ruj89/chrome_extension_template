@@ -1,3 +1,4 @@
+console.log("Starting");
 document.querySelector("#publickey").remove();
 document.querySelector("p#download a").remove();
 const publicKey = document.createElement("p");

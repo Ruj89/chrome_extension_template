@@ -1,0 +1,9 @@
+{
+	"name": "com.example.nativeapp",
+	"description": "Native messaging host written in Go",
+	"path": "$PATH",
+	"type": "stdio",
+	"allowed_origins": [
+		"chrome-extension://$EXTENSION_ID/"
+	]
+}

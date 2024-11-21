@@ -4,18 +4,22 @@
 	"version": "1.0",
 	"description": "R Plus companion extension",
 	"permissions": [
-		"scripting"
+		"scripting",
+		"nativeMessaging"
 	],
 	"content_scripts": [
 		{
 			"matches": [
-				"file:///*/index.html"
+				"file:///*/index.html*"
 			],
 			"js": [
 				"content.js"
 			]
 		}
 	],
+	"background": {
+		"service_worker": "background.js"
+	},
 	"action": {
 		"default_popup": "popup.html"
 	}
